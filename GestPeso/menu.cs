@@ -21,5 +21,12 @@ namespace GestPeso
         {
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var usuarios = new usuarios();
+            usuarios.Show();
+
+        }
     }
 }
