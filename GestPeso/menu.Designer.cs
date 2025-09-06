@@ -1,0 +1,400 @@
+﻿namespace GestPeso
+{
+    partial class menu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            label3 = new Label();
+            button3 = new Button();
+            label2 = new Label();
+            button2 = new Button();
+            label1 = new Label();
+            button1 = new Button();
+            tabPage2 = new TabPage();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label6 = new Label();
+            textBox2 = new TextBox();
+            label7 = new Label();
+            textBox3 = new TextBox();
+            label8 = new Label();
+            button4 = new Button();
+            button5 = new Button();
+            groupBox1 = new GroupBox();
+            label9 = new Label();
+            button6 = new Button();
+            tabPage3 = new TabPage();
+            button10 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            tabPage3.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Location = new Point(2, 2);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(837, 486);
+            tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(button6);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(button3);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Controls.Add(button1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(829, 458);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Menu";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(159, 208);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 17);
+            label3.TabIndex = 5;
+            label3.Text = "Fechamento Mensal";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(67, 186);
+            button3.Name = "button3";
+            button3.Size = new Size(86, 62);
+            button3.TabIndex = 4;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(159, 127);
+            label2.Name = "label2";
+            label2.Size = new Size(113, 17);
+            label2.TabIndex = 3;
+            label2.Text = "Pesquisar/Editar ";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(67, 105);
+            button2.Name = "button2";
+            button2.Size = new Size(86, 62);
+            button2.TabIndex = 2;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(159, 49);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 17);
+            label1.TabIndex = 1;
+            label1.Text = "Novo Lançamento";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(67, 27);
+            button1.Name = "button1";
+            button1.Size = new Size(86, 62);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(829, 458);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "incluir";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI", 9.75F);
+            textBox1.Location = new Point(270, 63);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(164, 25);
+            textBox1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F);
+            label4.Location = new Point(270, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(36, 17);
+            label4.TabIndex = 2;
+            label4.Text = "Peso";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(22, 63);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(89, 23);
+            comboBox1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F);
+            label5.Location = new Point(22, 43);
+            label5.Name = "label5";
+            label5.Size = new Size(33, 17);
+            label5.TabIndex = 4;
+            label5.Text = "Filial";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(135, 63);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(108, 23);
+            dateTimePicker1.TabIndex = 5;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F);
+            label6.Location = new Point(135, 43);
+            label6.Name = "label6";
+            label6.Size = new Size(27, 17);
+            label6.TabIndex = 6;
+            label6.Text = "Dia";
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Font = new Font("Segoe UI", 9.75F);
+            textBox2.Location = new Point(22, 124);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(114, 25);
+            textBox2.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F);
+            label7.Location = new Point(22, 104);
+            label7.Name = "label7";
+            label7.Size = new Size(38, 17);
+            label7.TabIndex = 8;
+            label7.Text = "Valor";
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Font = new Font("Segoe UI", 9.75F);
+            textBox3.Location = new Point(146, 124);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(164, 25);
+            textBox3.TabIndex = 9;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F);
+            label8.Location = new Point(146, 104);
+            label8.Name = "label8";
+            label8.Size = new Size(36, 17);
+            label8.TabIndex = 10;
+            label8.Text = "Total";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(395, 249);
+            button4.Name = "button4";
+            button4.Size = new Size(115, 32);
+            button4.TabIndex = 11;
+            button4.Text = "Confirmar";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(21, 249);
+            button5.Name = "button5";
+            button5.Size = new Size(115, 32);
+            button5.TabIndex = 12;
+            button5.Text = "Sair";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(button5);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Location = new Point(6, 6);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(581, 352);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(159, 294);
+            label9.Name = "label9";
+            label9.Size = new Size(97, 17);
+            label9.TabIndex = 7;
+            label9.Text = "Administrador";
+            // 
+            // button6
+            // 
+            button6.Location = new Point(67, 272);
+            button6.Name = "button6";
+            button6.Size = new Size(86, 62);
+            button6.TabIndex = 6;
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(button8);
+            tabPage3.Controls.Add(button7);
+            tabPage3.Controls.Add(button10);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(829, 458);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "admin";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(90, 60);
+            button10.Name = "button10";
+            button10.Size = new Size(193, 33);
+            button10.TabIndex = 8;
+            button10.Text = "Cadastrar usuários";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(90, 99);
+            button7.Name = "button7";
+            button7.Size = new Size(193, 33);
+            button7.TabIndex = 9;
+            button7.Text = "Cadastrar Filial";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(90, 138);
+            button8.Name = "button8";
+            button8.Size = new Size(193, 33);
+            button8.TabIndex = 10;
+            button8.Text = "Cadastrar usuários";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // menu
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(851, 480);
+            Controls.Add(tabControl1);
+            Name = "menu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "GestPeso";
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private Label label3;
+        private Button button3;
+        private Label label2;
+        private Button button2;
+        private Label label1;
+        private Button button1;
+        private DateTimePicker dateTimePicker1;
+        private Label label5;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label4;
+        private Label label6;
+        private Button button5;
+        private Button button4;
+        private TextBox textBox3;
+        private Label label8;
+        private TextBox textBox2;
+        private Label label7;
+        private GroupBox groupBox1;
+        private Label label9;
+        private Button button6;
+        private TabPage tabPage3;
+        private Button button8;
+        private Button button7;
+        private Button button10;
+    }
+}
