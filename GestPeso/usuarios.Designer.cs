@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuarios));
             textBox1 = new TextBox();
             label1 = new Label();
             textBox2 = new TextBox();
@@ -57,6 +58,7 @@
             button4 = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
+            button8 = new Button();
             groupBox1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -221,6 +223,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(button8);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(dataGridView2);
@@ -303,11 +306,15 @@
             // 
             // button5
             // 
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.ImageAlign = ContentAlignment.MiddleRight;
             button5.Location = new Point(587, 30);
             button5.Name = "button5";
-            button5.Size = new Size(92, 31);
+            button5.Size = new Size(105, 31);
             button5.TabIndex = 17;
             button5.Text = "Pesquisar";
+            button5.TextAlign = ContentAlignment.MiddleRight;
+            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
             button5.UseVisualStyleBackColor = true;
             // 
             // comboBox2
@@ -330,6 +337,7 @@
             // 
             // textBox5
             // 
+            textBox5.BackColor = SystemColors.InactiveCaption;
             textBox5.BorderStyle = BorderStyle.FixedSingle;
             textBox5.Font = new Font("Segoe UI", 9.75F);
             textBox5.Location = new Point(143, 34);
@@ -364,6 +372,15 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(78, 25);
             textBox4.TabIndex = 10;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(642, 332);
+            button8.Name = "button8";
+            button8.Size = new Size(142, 28);
+            button8.TabIndex = 23;
+            button8.Text = "Confirmar alterações";
+            button8.UseVisualStyleBackColor = true;
             // 
             // usuarios
             // 
@@ -415,5 +432,6 @@
         private Label label9;
         private Label label8;
         private DataGridView dataGridView2;
+        private Button button8;
     }
 }

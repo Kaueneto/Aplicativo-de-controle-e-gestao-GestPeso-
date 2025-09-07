@@ -28,5 +28,33 @@ namespace GestPeso
             usuarios.Show();
 
         }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+
+        }
     }
 }
