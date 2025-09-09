@@ -45,8 +45,7 @@ namespace GestPeso
                 progressBarLogin.Visible = true;
                 progressBarLogin.Value = 0;
                 progressBarLogin.Value = 5;
-                progressBarLogin.Value = 10;
-                progressBarLogin.Value = 15;
+
                 progressBarLogin.Value = 20;
                 progressBarLogin.Value = 25;
 
@@ -114,6 +113,7 @@ namespace GestPeso
                 MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
             }
         }
+
 
 
         private bool senhaVisivel = false;

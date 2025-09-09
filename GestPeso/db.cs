@@ -19,7 +19,8 @@ namespace GestPeso
             string port = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
             string db = Environment.GetEnvironmentVariable("DB_NAME");
             string user = Environment.GetEnvironmentVariable("DB_USER");
-            string password = Environment.GetEnvironmentVariable("DB_PASS");
+            string password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            MessageBox.Show($"HOST={host}\nDB={db}\nUSER={user}\nPASS={password}");
 
             if (string.IsNullOrEmpty(host) || string.IsNullOrEmpty(db) ||
                 string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))

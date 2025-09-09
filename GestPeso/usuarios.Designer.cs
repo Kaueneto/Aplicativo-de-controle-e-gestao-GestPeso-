@@ -37,15 +37,15 @@
             button2 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            btLimpar = new Button();
-            checkBox1 = new CheckBox();
-            button3 = new Button();
+            btLimparCadastro = new Button();
+            cboxGerarSenhaPadrao = new CheckBox();
+            btpesquisaempresa = new Button();
             label5 = new Label();
             label4 = new Label();
             txtcodigoCadastro = new TextBox();
             label3 = new Label();
-            cboxempresa = new ComboBox();
-            btCadastrar = new Button();
+            cboxempresaCadastro = new ComboBox();
+            btCadastrarUsuario = new Button();
             tabPage2 = new TabPage();
             button8 = new Button();
             label9 = new Label();
@@ -139,15 +139,15 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btLimpar);
-            tabPage1.Controls.Add(checkBox1);
-            tabPage1.Controls.Add(button3);
+            tabPage1.Controls.Add(btLimparCadastro);
+            tabPage1.Controls.Add(cboxGerarSenhaPadrao);
+            tabPage1.Controls.Add(btpesquisaempresa);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(txtcodigoCadastro);
             tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(cboxempresa);
-            tabPage1.Controls.Add(btCadastrar);
+            tabPage1.Controls.Add(cboxempresaCadastro);
+            tabPage1.Controls.Add(btCadastrarUsuario);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(txtsenhaCadastro);
@@ -161,35 +161,35 @@
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
-            // btLimpar
+            // btLimparCadastro
             // 
-            btLimpar.Location = new Point(270, 250);
-            btLimpar.Name = "btLimpar";
-            btLimpar.Size = new Size(92, 28);
-            btLimpar.TabIndex = 13;
-            btLimpar.Text = "Limpar";
-            btLimpar.UseVisualStyleBackColor = true;
-            btLimpar.Click += button9_Click;
+            btLimparCadastro.Location = new Point(270, 250);
+            btLimparCadastro.Name = "btLimparCadastro";
+            btLimparCadastro.Size = new Size(92, 28);
+            btLimparCadastro.TabIndex = 13;
+            btLimparCadastro.Text = "Limpar";
+            btLimparCadastro.UseVisualStyleBackColor = true;
+            btLimparCadastro.Click += button9_Click;
             // 
-            // checkBox1
+            // cboxGerarSenhaPadrao
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(318, 136);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(129, 19);
-            checkBox1.TabIndex = 12;
-            checkBox1.Text = "Gerar Senha padrão";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            cboxGerarSenhaPadrao.AutoSize = true;
+            cboxGerarSenhaPadrao.Location = new Point(318, 136);
+            cboxGerarSenhaPadrao.Name = "cboxGerarSenhaPadrao";
+            cboxGerarSenhaPadrao.Size = new Size(129, 19);
+            cboxGerarSenhaPadrao.TabIndex = 12;
+            cboxGerarSenhaPadrao.Text = "Gerar Senha padrão";
+            cboxGerarSenhaPadrao.UseVisualStyleBackColor = true;
+            cboxGerarSenhaPadrao.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // button3
+            // btpesquisaempresa
             // 
-            button3.Location = new Point(310, 180);
-            button3.Name = "button3";
-            button3.Size = new Size(39, 23);
-            button3.TabIndex = 11;
-            button3.Text = "...";
-            button3.UseVisualStyleBackColor = true;
+            btpesquisaempresa.Location = new Point(310, 180);
+            btpesquisaempresa.Name = "btpesquisaempresa";
+            btpesquisaempresa.Size = new Size(39, 23);
+            btpesquisaempresa.TabIndex = 11;
+            btpesquisaempresa.Text = "...";
+            btpesquisaempresa.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -231,23 +231,25 @@
             label3.TabIndex = 7;
             label3.Text = "Empresa";
             // 
-            // cboxempresa
+            // cboxempresaCadastro
             // 
-            cboxempresa.FormattingEnabled = true;
-            cboxempresa.Location = new Point(22, 180);
-            cboxempresa.Name = "cboxempresa";
-            cboxempresa.Size = new Size(282, 23);
-            cboxempresa.TabIndex = 6;
+            cboxempresaCadastro.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboxempresaCadastro.FormattingEnabled = true;
+            cboxempresaCadastro.Items.AddRange(new object[] { "1-STORE", "2-PROEZA" });
+            cboxempresaCadastro.Location = new Point(22, 180);
+            cboxempresaCadastro.Name = "cboxempresaCadastro";
+            cboxempresaCadastro.Size = new Size(282, 23);
+            cboxempresaCadastro.TabIndex = 6;
             // 
-            // btCadastrar
+            // btCadastrarUsuario
             // 
-            btCadastrar.Location = new Point(368, 250);
-            btCadastrar.Name = "btCadastrar";
-            btCadastrar.Size = new Size(92, 28);
-            btCadastrar.TabIndex = 5;
-            btCadastrar.Text = "Cadastrar";
-            btCadastrar.UseVisualStyleBackColor = true;
-            btCadastrar.Click += button1_Click;
+            btCadastrarUsuario.Location = new Point(368, 250);
+            btCadastrarUsuario.Name = "btCadastrarUsuario";
+            btCadastrarUsuario.Size = new Size(92, 28);
+            btCadastrarUsuario.TabIndex = 5;
+            btCadastrarUsuario.Text = "Cadastrar";
+            btCadastrarUsuario.UseVisualStyleBackColor = true;
+            btCadastrarUsuario.Click += button1_Click;
             // 
             // tabPage2
             // 
@@ -440,10 +442,10 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Label label3;
-        private ComboBox cboxempresa;
-        private Button btCadastrar;
+        private ComboBox cboxempresaCadastro;
+        private Button btCadastrarUsuario;
         private TabPage tabPage2;
-        private Button button3;
+        private Button btpesquisaempresa;
         private Label label5;
         private Label label4;
         private TextBox txtcodigoCadastro;
@@ -461,7 +463,7 @@
         private Label label8;
         private DataGridView dataGridView2;
         private Button button8;
-        private CheckBox checkBox1;
-        private Button btLimpar;
+        private CheckBox cboxGerarSenhaPadrao;
+        private Button btLimparCadastro;
     }
 }
