@@ -13,7 +13,7 @@ namespace GestPeso
         private static string BuildConnStr()
         {
             // Carrega o .env
-            Env.Load(@"C:\dev\GestPeso\GestPeso\.env");
+            Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
 
             string host = Environment.GetEnvironmentVariable("DB_HOST");
             string port = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";

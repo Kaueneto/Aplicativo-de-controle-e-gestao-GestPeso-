@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestPeso
+namespace GestPeso.model
 {
     // Modelo da tabela usuarios
     [Table("usuarios")]

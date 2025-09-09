@@ -124,11 +124,17 @@
   <data name="cad empresas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cad empresas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eye closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon pesquisa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon pesquisa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print tela inicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print tela inicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon auditar custo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon auditar custo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +166,10 @@
   <data name="icon voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon voltar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="print tela inicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print tela inicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye closed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye closed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye opened" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye opened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

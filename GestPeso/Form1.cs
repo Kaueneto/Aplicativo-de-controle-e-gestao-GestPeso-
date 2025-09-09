@@ -1,4 +1,4 @@
-using Supabase;
+Ôªøusing Supabase;
 using Supabase.Postgrest;
 using Supabase.Postgrest.Models;
 using System;
@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DotNetEnv;
 using Supabase.Postgrest.Attributes;
+using GestPeso.model;
 
 namespace GestPeso
 {
+
+
+
+
     public partial class LoginPage : Form
     {
 
@@ -18,8 +23,16 @@ namespace GestPeso
         {
 
             InitializeComponent();
+            txtsenha.PasswordChar = '‚óè';
 
-            // Evento do bot„o
+
+            // Inicializa: senha escondida
+
+            picOlhoAberto.Visible = false;
+            picOlhoFechado.Visible = true;
+
+
+            // Evento do bot√£o
             btentrar.Click += async (s, e) => await LoginAsync();
         }
 
@@ -34,14 +47,14 @@ namespace GestPeso
                 progressBarLogin.Value = 30;
 
                 // Carrega o .env
-                Env.Load(@"C:\dev\GestPeso\GestPeso\.env");
+                Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
 
                 string url = Environment.GetEnvironmentVariable("SUPABASE_URL");
                 string key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
                 if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
                 {
-                    MessageBox.Show("Vari·veis de ambiente SUPABASE_URL ou SUPABASE_KEY n„o definidas.");
+                    MessageBox.Show("Vari√°veis de ambiente SUPABASE_URL ou SUPABASE_KEY n√£o definidas.");
                     return;
                 }
 
@@ -54,11 +67,11 @@ namespace GestPeso
 
                 if (string.IsNullOrEmpty(codigoUsuario) || string.IsNullOrEmpty(senhaDigitada))
                 {
-                    MessageBox.Show("Preencha usu·rio e senha.");
+                    MessageBox.Show("Preencha usu√°rio e senha.");
                     return;
                 }
 
-                // Busca o usu·rio na tabela 'usuarios'
+                // Busca o usu√°rio na tabela 'usuarios'
                 var usuarios = await client
                     .From<Usuario>()
                     .Where(u => u.codigo_usuario == codigoUsuario)
@@ -67,13 +80,13 @@ namespace GestPeso
 
                 if (usuarios.Models.Count == 0)
                 {
-                    MessageBox.Show("Usu·rio n„o encontrado.");
+                    MessageBox.Show("Usu√°rio n√£o encontrado.");
                     return;
                 }
 
                 var usuario = usuarios.Models[0];
 
-                // ValidaÁ„o simples de senha (texto puro)
+                // Valida√ß√£o simples de senha (texto puro)
                 if (usuario.senha_hash == senhaDigitada)
                 {
                     progressBarLogin.Value = 100;
@@ -94,7 +107,8 @@ namespace GestPeso
                 MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
             }
         }
-
+        private bool senhaVisivel = false;
+    
         private void btentrar_Click(object sender, EventArgs e)
         {
 
@@ -103,6 +117,34 @@ namespace GestPeso
         private void btclose_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBarLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void picOlhoFechado_Click_1(object sender, EventArgs e)
+        {
+            // Esconder a senha
+            txtsenha.PasswordChar = '‚óè';
+            picOlhoAberto.Visible = true;
+            picOlhoFechado.Visible = false;
+        }
+
+        private void picOlhoAberto_Click_1(object sender, EventArgs e)
+        {
+            // Mostrar a senha
+            txtsenha.PasswordChar = '\0';
+            picOlhoAberto.Visible = false;
+            picOlhoFechado.Visible = true;
         }
     }
 
