@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuarios));
-            textBox1 = new TextBox();
+            txtnomeCadastro = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtsenhaCadastro = new TextBox();
             label2 = new Label();
             groupBox1 = new GroupBox();
             button2 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btLimpar = new Button();
+            checkBox1 = new CheckBox();
             button3 = new Button();
             label5 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
+            txtcodigoCadastro = new TextBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
+            cboxempresa = new ComboBox();
+            btCadastrar = new Button();
             tabPage2 = new TabPage();
+            button8 = new Button();
             label9 = new Label();
             label8 = new Label();
             dataGridView2 = new DataGridView();
@@ -58,7 +61,6 @@
             button4 = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
-            button8 = new Button();
             groupBox1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -67,14 +69,15 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtnomeCadastro
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 9.75F);
-            textBox1.Location = new Point(22, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(369, 25);
-            textBox1.TabIndex = 1;
+            txtnomeCadastro.BorderStyle = BorderStyle.FixedSingle;
+            txtnomeCadastro.Font = new Font("Segoe UI", 9.75F);
+            txtnomeCadastro.Location = new Point(22, 84);
+            txtnomeCadastro.Name = "txtnomeCadastro";
+            txtnomeCadastro.Size = new Size(369, 25);
+            txtnomeCadastro.TabIndex = 1;
+            txtnomeCadastro.TextChanged += txtnomeCadastro_TextChanged;
             // 
             // label1
             // 
@@ -86,14 +89,14 @@
             label1.TabIndex = 2;
             label1.Text = "Nome usuário";
             // 
-            // textBox2
+            // txtsenhaCadastro
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 9.75F);
-            textBox2.Location = new Point(22, 132);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(282, 25);
-            textBox2.TabIndex = 3;
+            txtsenhaCadastro.BorderStyle = BorderStyle.FixedSingle;
+            txtsenhaCadastro.Font = new Font("Segoe UI", 9.75F);
+            txtsenhaCadastro.Location = new Point(22, 132);
+            txtsenhaCadastro.Name = "txtsenhaCadastro";
+            txtsenhaCadastro.Size = new Size(282, 25);
+            txtsenhaCadastro.TabIndex = 3;
             // 
             // label2
             // 
@@ -136,17 +139,19 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btLimpar);
+            tabPage1.Controls.Add(checkBox1);
             tabPage1.Controls.Add(button3);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(textBox3);
+            tabPage1.Controls.Add(txtcodigoCadastro);
             tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(cboxempresa);
+            tabPage1.Controls.Add(btCadastrar);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(txtsenhaCadastro);
+            tabPage1.Controls.Add(txtnomeCadastro);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -154,6 +159,28 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Cadastrar";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
+            // 
+            // btLimpar
+            // 
+            btLimpar.Location = new Point(270, 250);
+            btLimpar.Name = "btLimpar";
+            btLimpar.Size = new Size(92, 28);
+            btLimpar.TabIndex = 13;
+            btLimpar.Text = "Limpar";
+            btLimpar.UseVisualStyleBackColor = true;
+            btLimpar.Click += button9_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(318, 136);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(129, 19);
+            checkBox1.TabIndex = 12;
+            checkBox1.Text = "Gerar Senha padrão";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // button3
             // 
@@ -185,14 +212,14 @@
             label4.TabIndex = 9;
             label4.Text = "Código";
             // 
-            // textBox3
+            // txtcodigoCadastro
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI", 9.75F);
-            textBox3.Location = new Point(22, 36);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(144, 25);
-            textBox3.TabIndex = 8;
+            txtcodigoCadastro.BorderStyle = BorderStyle.FixedSingle;
+            txtcodigoCadastro.Font = new Font("Segoe UI", 9.75F);
+            txtcodigoCadastro.Location = new Point(22, 36);
+            txtcodigoCadastro.Name = "txtcodigoCadastro";
+            txtcodigoCadastro.Size = new Size(144, 25);
+            txtcodigoCadastro.TabIndex = 8;
             // 
             // label3
             // 
@@ -204,22 +231,23 @@
             label3.TabIndex = 7;
             label3.Text = "Empresa";
             // 
-            // comboBox1
+            // cboxempresa
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(22, 180);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(282, 23);
-            comboBox1.TabIndex = 6;
+            cboxempresa.FormattingEnabled = true;
+            cboxempresa.Location = new Point(22, 180);
+            cboxempresa.Name = "cboxempresa";
+            cboxempresa.Size = new Size(282, 23);
+            cboxempresa.TabIndex = 6;
             // 
-            // button1
+            // btCadastrar
             // 
-            button1.Location = new Point(367, 222);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 31);
-            button1.TabIndex = 5;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            btCadastrar.Location = new Point(368, 250);
+            btCadastrar.Name = "btCadastrar";
+            btCadastrar.Size = new Size(92, 28);
+            btCadastrar.TabIndex = 5;
+            btCadastrar.Text = "Cadastrar";
+            btCadastrar.UseVisualStyleBackColor = true;
+            btCadastrar.Click += button1_Click;
             // 
             // tabPage2
             // 
@@ -245,6 +273,15 @@
             tabPage2.Text = "Controle de usuários";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(642, 332);
+            button8.Name = "button8";
+            button8.Size = new Size(142, 28);
+            button8.TabIndex = 23;
+            button8.Text = "Confirmar alterações";
+            button8.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -373,15 +410,6 @@
             textBox4.Size = new Size(78, 25);
             textBox4.TabIndex = 10;
             // 
-            // button8
-            // 
-            button8.Location = new Point(642, 332);
-            button8.Name = "button8";
-            button8.Size = new Size(142, 28);
-            button8.TabIndex = 23;
-            button8.Text = "Confirmar alterações";
-            button8.UseVisualStyleBackColor = true;
-            // 
             // usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -403,22 +431,22 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtnomeCadastro;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtsenhaCadastro;
         private Label label2;
         private GroupBox groupBox1;
         private Button button2;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Label label3;
-        private ComboBox comboBox1;
-        private Button button1;
+        private ComboBox cboxempresa;
+        private Button btCadastrar;
         private TabPage tabPage2;
         private Button button3;
         private Label label5;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox txtcodigoCadastro;
         private Label label6;
         private TextBox textBox4;
         private Button button4;
@@ -433,5 +461,7 @@
         private Label label8;
         private DataGridView dataGridView2;
         private Button button8;
+        private CheckBox checkBox1;
+        private Button btLimpar;
     }
 }

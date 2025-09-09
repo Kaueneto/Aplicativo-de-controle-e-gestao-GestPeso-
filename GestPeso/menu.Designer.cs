@@ -40,6 +40,8 @@
             button1 = new Button();
             tabPage2 = new TabPage();
             groupBox1 = new GroupBox();
+            label21 = new Label();
+            comboBox4 = new ComboBox();
             label5 = new Label();
             button5 = new Button();
             label4 = new Label();
@@ -140,13 +142,15 @@
             // 
             // button6
             // 
+            button6.BackColor = Color.White;
+            button6.FlatStyle = FlatStyle.Flat;
             button6.Image = Properties.Resources.icon_admin;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(67, 272);
             button6.Name = "button6";
             button6.Size = new Size(86, 62);
             button6.TabIndex = 6;
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
             // label3
@@ -161,13 +165,15 @@
             // 
             // button3
             // 
+            button3.BackColor = Color.White;
+            button3.FlatStyle = FlatStyle.Flat;
             button3.Image = Properties.Resources.icon_fechamento;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(67, 186);
             button3.Name = "button3";
             button3.Size = new Size(86, 62);
             button3.TabIndex = 4;
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -181,13 +187,15 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.White;
+            button2.FlatStyle = FlatStyle.Flat;
             button2.Image = Properties.Resources.pesquisa_icon;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(67, 105);
             button2.Name = "button2";
             button2.Size = new Size(86, 62);
             button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label1
@@ -202,13 +210,15 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.White;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Image = Properties.Resources.icon_add;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(67, 27);
             button1.Name = "button1";
             button1.Size = new Size(86, 62);
             button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // tabPage2
@@ -224,6 +234,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label21);
+            groupBox1.Controls.Add(comboBox4);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(button5);
             groupBox1.Controls.Add(label4);
@@ -241,6 +253,26 @@
             groupBox1.Size = new Size(581, 352);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 9.75F);
+            label21.Location = new Point(440, 44);
+            label21.Name = "label21";
+            label21.Size = new Size(56, 17);
+            label21.TabIndex = 14;
+            label21.Text = "Material";
+            // 
+            // comboBox4
+            // 
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "Osso", "Papelão", "Plástico", "Óleo", "" });
+            comboBox4.Location = new Point(440, 64);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(121, 23);
+            comboBox4.TabIndex = 13;
             // 
             // label5
             // 
@@ -260,6 +292,7 @@
             button5.TabIndex = 12;
             button5.Text = "Sair";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label4
             // 
@@ -522,6 +555,7 @@
             button21.Size = new Size(86, 62);
             button21.TabIndex = 13;
             button21.UseVisualStyleBackColor = true;
+            button21.Click += button21_Click;
             // 
             // tabPage4
             // 
@@ -809,5 +843,7 @@
         private Button button10;
         private Label label19;
         private Button button8;
+        private Label label21;
+        private ComboBox comboBox4;
     }
 }

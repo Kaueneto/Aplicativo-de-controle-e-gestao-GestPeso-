@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using DotNetEnv;
 using Supabase.Postgrest.Attributes;
 using GestPeso.model;
+using BCrypt.Net;
+
 
 namespace GestPeso
 {
@@ -42,6 +44,11 @@ namespace GestPeso
             {
                 progressBarLogin.Visible = true;
                 progressBarLogin.Value = 0;
+                progressBarLogin.Value = 5;
+                progressBarLogin.Value = 10;
+                progressBarLogin.Value = 15;
+                progressBarLogin.Value = 20;
+                progressBarLogin.Value = 25;
 
                 // Simula progresso inicial
                 progressBarLogin.Value = 30;
@@ -86,8 +93,8 @@ namespace GestPeso
 
                 var usuario = usuarios.Models[0];
 
-                // Validação simples de senha (texto puro)
-                if (usuario.senha_hash == senhaDigitada)
+                // Validação da senha usando BCrypt
+                if (BCrypt.Net.BCrypt.Verify(senhaDigitada, usuario.senha_hash))
                 {
                     progressBarLogin.Value = 100;
                     progressBarLogin.Visible = false;
@@ -107,6 +114,8 @@ namespace GestPeso
                 MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
             }
         }
+
+
         private bool senhaVisivel = false;
     
         private void btentrar_Click(object sender, EventArgs e)

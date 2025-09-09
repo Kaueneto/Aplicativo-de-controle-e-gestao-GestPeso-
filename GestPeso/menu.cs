@@ -49,12 +49,25 @@ namespace GestPeso
         {
             tabControl1.SelectedIndex = 1;
 
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 3;
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            var formusuarios = new usuarios();
+            formusuarios.Show();
         }
     }
 }
