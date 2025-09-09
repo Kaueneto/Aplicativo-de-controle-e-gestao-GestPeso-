@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            textBox2 = new TextBox();
+            txtuser = new TextBox();
+            btentrar = new Button();
+            txtsenha = new TextBox();
             label2 = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            btchangepass = new Button();
+            btclose = new Button();
             groupBox1 = new GroupBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -49,35 +49,35 @@
             label1.TabIndex = 0;
             label1.Text = "Usuário";
             // 
-            // textBox1
+            // txtuser
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 9.75F);
-            textBox1.Location = new Point(91, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(231, 25);
-            textBox1.TabIndex = 0;
+            txtuser.BorderStyle = BorderStyle.FixedSingle;
+            txtuser.Font = new Font("Segoe UI", 9.75F);
+            txtuser.Location = new Point(91, 27);
+            txtuser.Name = "txtuser";
+            txtuser.Size = new Size(231, 25);
+            txtuser.TabIndex = 0;
             // 
-            // button1
+            // btentrar
             // 
-            button1.Font = new Font("Segoe UI", 9.75F);
-            button1.Location = new Point(250, 106);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btentrar.Font = new Font("Segoe UI", 9.75F);
+            btentrar.Location = new Point(250, 106);
+            btentrar.Name = "btentrar";
+            btentrar.Size = new Size(82, 34);
+            btentrar.TabIndex = 2;
+            btentrar.Text = "Entrar";
+            btentrar.UseVisualStyleBackColor = true;
+          //  btentrar.Click += button1_ClickAsync;
             // 
-            // textBox2
+            // txtsenha
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 9.75F);
-            textBox2.Location = new Point(91, 58);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(231, 25);
-            textBox2.TabIndex = 1;
+            txtsenha.BorderStyle = BorderStyle.FixedSingle;
+            txtsenha.Font = new Font("Segoe UI", 9.75F);
+            txtsenha.Location = new Point(91, 58);
+            txtsenha.Name = "txtsenha";
+            txtsenha.PasswordChar = '*';
+            txtsenha.Size = new Size(231, 25);
+            txtsenha.TabIndex = 1;
             // 
             // label2
             // 
@@ -89,36 +89,36 @@
             label2.TabIndex = 3;
             label2.Text = "Senha";
             // 
-            // button2
+            // btchangepass
             // 
-            button2.Font = new Font("Segoe UI", 9.75F);
-            button2.Location = new Point(42, 106);
-            button2.Name = "button2";
-            button2.Size = new Size(109, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Trocar Senha";
-            button2.UseVisualStyleBackColor = true;
+            btchangepass.Font = new Font("Segoe UI", 9.75F);
+            btchangepass.Location = new Point(42, 106);
+            btchangepass.Name = "btchangepass";
+            btchangepass.Size = new Size(109, 34);
+            btchangepass.TabIndex = 3;
+            btchangepass.Text = "Trocar Senha";
+            btchangepass.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btclose
             // 
-            button3.Font = new Font("Segoe UI", 9.75F);
-            button3.Location = new Point(157, 106);
-            button3.Name = "button3";
-            button3.Size = new Size(87, 34);
-            button3.TabIndex = 4;
-            button3.Text = "Fechar";
-            button3.UseVisualStyleBackColor = true;
+            btclose.Font = new Font("Segoe UI", 9.75F);
+            btclose.Location = new Point(157, 106);
+            btclose.Name = "btclose";
+            btclose.Size = new Size(87, 34);
+            btclose.TabIndex = 4;
+            btclose.Text = "Fechar";
+            btclose.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btclose);
+            groupBox1.Controls.Add(txtuser);
+            groupBox1.Controls.Add(btchangepass);
+            groupBox1.Controls.Add(btentrar);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(txtsenha);
             groupBox1.Location = new Point(12, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(353, 174);
@@ -143,12 +143,12 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
-        private TextBox textBox2;
+        private TextBox txtuser;
+        private Button btentrar;
+        private TextBox txtsenha;
         private Label label2;
-        private Button button2;
-        private Button button3;
+        private Button btchangepass;
+        private Button btclose;
         private GroupBox groupBox1;
     }
 }
