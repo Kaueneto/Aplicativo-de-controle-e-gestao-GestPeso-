@@ -1,4 +1,5 @@
 ﻿using DotNetEnv;
+using Microsoft.VisualBasic;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,9 @@ namespace GestPeso
         private void button9_Click(object sender, EventArgs e)
         {
             txtsenhaCadastro.Text = "";
+            txtcodigoCadastro.Text = "";
+            txtnomeCadastro.Text = "";
+            cboxempresaCadastro.SelectedIndex = -1;
 
         }
 
@@ -69,9 +73,9 @@ namespace GestPeso
                     return;
                 }
 
-    
 
-           
+
+
                 string codigoUsuario = txtcodigoCadastro.Text.Trim();
                 string nome = txtnomeCadastro.Text.Trim();
                 string senha;
@@ -90,13 +94,13 @@ namespace GestPeso
                     senha = txtsenhaCadastro.Text.Trim();
                 }
 
-      
+
                 string senhaHash = BCrypt.Net.BCrypt.HashPassword(senha);
 
                 int idEmpresa = Convert.ToInt32(cboxempresaCadastro.SelectedValue);
 
                 // Abre conexão
-           Db.Abrir();
+                Db.Abrir();
 
                 string sql = @"
                     INSERT INTO usuarios 
@@ -131,7 +135,7 @@ namespace GestPeso
             }
             finally
             {
-            Db.Fechar();
+                Db.Fechar();
             }
         }
 
@@ -143,9 +147,78 @@ namespace GestPeso
             cboxempresaCadastro.SelectedIndex = -1;
             cboxGerarSenhaPadrao.Checked = false;
         }
-    
+
 
         private void txtnomeCadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsenhaCadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               // Db.Abrir();
+
+                string sql = @"
+                    SELECT id_usuario, codigo_usuario, nome, id_empresa, dt_cadastro_usuario
+                    FROM usuarios
+                    WHERE 1=1
+                ";
+
+                if (!string.IsNullOrWhiteSpace(txtcoduserPesquisa.Text))
+                {
+                    sql += " AND codigo_usuario ILIKE @codigo";
+                }
+
+                if (!string.IsNullOrWhiteSpace(txtNomeUserPesquisa.Text))
+                {
+                    sql += " AND nome ILIKE @nome";
+                }
+
+                using (var cmd = new NpgsqlCommand(sql, Db.Conexao))
+                {
+                    if (!string.IsNullOrWhiteSpace(txtcoduserPesquisa.Text))
+                        cmd.Parameters.AddWithValue("codigo", "%" + txtcoduserPesquisa.Text.Trim() + "%");
+
+                    if (!string.IsNullOrWhiteSpace(txtNomeUserPesquisa.Text))
+                        cmd.Parameters.AddWithValue("nome", "%" + txtNomeUserPesquisa.Text.Trim() + "%");
+
+                    using (var adapter = new NpgsqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridUsuariosCadastrados.DataSource = dt;
+                    }
+                }
+
+
+                dataGridUsuariosCadastrados.Columns["id_usuario"].HeaderText = "ID";
+                dataGridUsuariosCadastrados.Columns["codigo_usuario"].HeaderText = "Código";
+                dataGridUsuariosCadastrados.Columns["nome"].HeaderText = "Nome";
+                dataGridUsuariosCadastrados.Columns["id_empresa"].HeaderText = "Empresa";
+                dataGridUsuariosCadastrados.Columns["dt_cadastro_usuario"].HeaderText = "Data de Cadastro";
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao pesquisar: " + ex.Message);
+            }
+            finally
+            {
+               // Db.Fechar();
+            }
+        }
+
+        private void btFechar_Click(object sender, EventArgs e)
         {
 
         }

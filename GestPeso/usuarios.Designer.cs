@@ -34,9 +34,10 @@
             txtsenhaCadastro = new TextBox();
             label2 = new Label();
             groupBox1 = new GroupBox();
-            button2 = new Button();
+            btFechar = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button1 = new Button();
             btLimparCadastro = new Button();
             cboxGerarSenhaPadrao = new CheckBox();
             btpesquisaempresa = new Button();
@@ -47,31 +48,32 @@
             cboxempresaCadastro = new ComboBox();
             btCadastrarUsuario = new Button();
             tabPage2 = new TabPage();
-            button8 = new Button();
+            btconfirmaAlteracoes = new Button();
             label9 = new Label();
             label8 = new Label();
-            dataGridView2 = new DataGridView();
-            button7 = new Button();
-            button6 = new Button();
-            dataGridView1 = new DataGridView();
-            button5 = new Button();
-            comboBox2 = new ComboBox();
+            dataGridPermissoesUsuarios = new DataGridView();
+            btEditar = new Button();
+            BtExcluir = new Button();
+            dataGridUsuariosCadastrados = new DataGridView();
+            btPesquisa = new Button();
+            cboxEmpresa = new ComboBox();
             label7 = new Label();
-            textBox5 = new TextBox();
+            txtNomeUserPesquisa = new TextBox();
             button4 = new Button();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtcoduserPesquisa = new TextBox();
             groupBox1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridPermissoesUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridUsuariosCadastrados).BeginInit();
             SuspendLayout();
             // 
             // txtnomeCadastro
             // 
             txtnomeCadastro.BorderStyle = BorderStyle.FixedSingle;
+            txtnomeCadastro.CharacterCasing = CharacterCasing.Upper;
             txtnomeCadastro.Font = new Font("Segoe UI", 9.75F);
             txtnomeCadastro.Location = new Point(22, 84);
             txtnomeCadastro.Name = "txtnomeCadastro";
@@ -96,7 +98,7 @@
             txtsenhaCadastro.Location = new Point(22, 132);
             txtsenhaCadastro.Name = "txtsenhaCadastro";
             txtsenhaCadastro.Size = new Size(282, 25);
-            txtsenhaCadastro.TabIndex = 3;
+            txtsenhaCadastro.TabIndex = 2;
             // 
             // label2
             // 
@@ -110,7 +112,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(btFechar);
             groupBox1.Controls.Add(tabControl1);
             groupBox1.Location = new Point(3, 0);
             groupBox1.Name = "groupBox1";
@@ -118,14 +120,15 @@
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             // 
-            // button2
+            // btFechar
             // 
-            button2.Location = new Point(10, 436);
-            button2.Name = "button2";
-            button2.Size = new Size(92, 31);
-            button2.TabIndex = 8;
-            button2.Text = "Fechar";
-            button2.UseVisualStyleBackColor = true;
+            btFechar.Location = new Point(10, 436);
+            btFechar.Name = "btFechar";
+            btFechar.Size = new Size(92, 31);
+            btFechar.TabIndex = 8;
+            btFechar.Text = "Fechar";
+            btFechar.UseVisualStyleBackColor = true;
+            btFechar.Click += btFechar_Click;
             // 
             // tabControl1
             // 
@@ -139,6 +142,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(btLimparCadastro);
             tabPage1.Controls.Add(cboxGerarSenhaPadrao);
             tabPage1.Controls.Add(btpesquisaempresa);
@@ -160,6 +164,16 @@
             tabPage1.Text = "Cadastrar";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(22, 250);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 28);
+            button1.TabIndex = 14;
+            button1.Text = "Confirmar Edição";
+            button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             // 
             // btLimparCadastro
             // 
@@ -219,7 +233,7 @@
             txtcodigoCadastro.Location = new Point(22, 36);
             txtcodigoCadastro.Name = "txtcodigoCadastro";
             txtcodigoCadastro.Size = new Size(144, 25);
-            txtcodigoCadastro.TabIndex = 8;
+            txtcodigoCadastro.TabIndex = 0;
             // 
             // label3
             // 
@@ -239,34 +253,34 @@
             cboxempresaCadastro.Location = new Point(22, 180);
             cboxempresaCadastro.Name = "cboxempresaCadastro";
             cboxempresaCadastro.Size = new Size(282, 23);
-            cboxempresaCadastro.TabIndex = 6;
+            cboxempresaCadastro.TabIndex = 3;
             // 
             // btCadastrarUsuario
             // 
             btCadastrarUsuario.Location = new Point(368, 250);
             btCadastrarUsuario.Name = "btCadastrarUsuario";
             btCadastrarUsuario.Size = new Size(92, 28);
-            btCadastrarUsuario.TabIndex = 5;
+            btCadastrarUsuario.TabIndex = 4;
             btCadastrarUsuario.Text = "Cadastrar";
             btCadastrarUsuario.UseVisualStyleBackColor = true;
             btCadastrarUsuario.Click += button1_Click;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(button8);
+            tabPage2.Controls.Add(btconfirmaAlteracoes);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(button7);
-            tabPage2.Controls.Add(button6);
-            tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(comboBox2);
+            tabPage2.Controls.Add(dataGridPermissoesUsuarios);
+            tabPage2.Controls.Add(btEditar);
+            tabPage2.Controls.Add(BtExcluir);
+            tabPage2.Controls.Add(dataGridUsuariosCadastrados);
+            tabPage2.Controls.Add(btPesquisa);
+            tabPage2.Controls.Add(cboxEmpresa);
             tabPage2.Controls.Add(label7);
-            tabPage2.Controls.Add(textBox5);
+            tabPage2.Controls.Add(txtNomeUserPesquisa);
             tabPage2.Controls.Add(button4);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(textBox4);
+            tabPage2.Controls.Add(txtcoduserPesquisa);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -276,14 +290,14 @@
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
-            // button8
+            // btconfirmaAlteracoes
             // 
-            button8.Location = new Point(642, 332);
-            button8.Name = "button8";
-            button8.Size = new Size(142, 28);
-            button8.TabIndex = 23;
-            button8.Text = "Confirmar alterações";
-            button8.UseVisualStyleBackColor = true;
+            btconfirmaAlteracoes.Location = new Point(642, 332);
+            btconfirmaAlteracoes.Name = "btconfirmaAlteracoes";
+            btconfirmaAlteracoes.Size = new Size(142, 28);
+            btconfirmaAlteracoes.TabIndex = 23;
+            btconfirmaAlteracoes.Text = "Confirmar alterações";
+            btconfirmaAlteracoes.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -307,62 +321,69 @@
             label8.TabIndex = 21;
             label8.Text = "Permissões por usuário";
             // 
-            // dataGridView2
+            // dataGridPermissoesUsuarios
             // 
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(454, 93);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(330, 233);
-            dataGridView2.TabIndex = 20;
+            dataGridPermissoesUsuarios.BackgroundColor = Color.White;
+            dataGridPermissoesUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridPermissoesUsuarios.Location = new Point(454, 93);
+            dataGridPermissoesUsuarios.Name = "dataGridPermissoesUsuarios";
+            dataGridPermissoesUsuarios.Size = new Size(330, 233);
+            dataGridPermissoesUsuarios.TabIndex = 20;
             // 
-            // button7
+            // btEditar
             // 
-            button7.Location = new Point(117, 332);
-            button7.Name = "button7";
-            button7.Size = new Size(90, 28);
-            button7.TabIndex = 19;
-            button7.Text = "Editar";
-            button7.UseVisualStyleBackColor = true;
+            btEditar.Location = new Point(117, 332);
+            btEditar.Name = "btEditar";
+            btEditar.Size = new Size(90, 28);
+            btEditar.TabIndex = 19;
+            btEditar.Text = "Editar";
+            btEditar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtExcluir
             // 
-            button6.Location = new Point(19, 332);
-            button6.Name = "button6";
-            button6.Size = new Size(90, 28);
-            button6.TabIndex = 9;
-            button6.Text = "Excluir";
-            button6.UseVisualStyleBackColor = true;
+            BtExcluir.Location = new Point(19, 332);
+            BtExcluir.Name = "BtExcluir";
+            BtExcluir.Size = new Size(90, 28);
+            BtExcluir.TabIndex = 9;
+            BtExcluir.Text = "Excluir";
+            BtExcluir.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridUsuariosCadastrados
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 93);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(416, 233);
-            dataGridView1.TabIndex = 18;
+            dataGridUsuariosCadastrados.AllowUserToAddRows = false;
+            dataGridUsuariosCadastrados.AllowUserToOrderColumns = true;
+            dataGridUsuariosCadastrados.AllowUserToResizeColumns = false;
+            dataGridUsuariosCadastrados.AllowUserToResizeRows = false;
+            dataGridUsuariosCadastrados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridUsuariosCadastrados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridUsuariosCadastrados.BackgroundColor = Color.White;
+            dataGridUsuariosCadastrados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridUsuariosCadastrados.Location = new Point(19, 93);
+            dataGridUsuariosCadastrados.Name = "dataGridUsuariosCadastrados";
+            dataGridUsuariosCadastrados.Size = new Size(416, 233);
+            dataGridUsuariosCadastrados.TabIndex = 18;
             // 
-            // button5
+            // btPesquisa
             // 
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleRight;
-            button5.Location = new Point(587, 30);
-            button5.Name = "button5";
-            button5.Size = new Size(105, 31);
-            button5.TabIndex = 17;
-            button5.Text = "Pesquisar";
-            button5.TextAlign = ContentAlignment.MiddleRight;
-            button5.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button5.UseVisualStyleBackColor = true;
+            btPesquisa.Image = (Image)resources.GetObject("btPesquisa.Image");
+            btPesquisa.ImageAlign = ContentAlignment.MiddleRight;
+            btPesquisa.Location = new Point(587, 30);
+            btPesquisa.Name = "btPesquisa";
+            btPesquisa.Size = new Size(105, 31);
+            btPesquisa.TabIndex = 17;
+            btPesquisa.Text = "Pesquisar";
+            btPesquisa.TextAlign = ContentAlignment.MiddleRight;
+            btPesquisa.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btPesquisa.UseVisualStyleBackColor = true;
+            btPesquisa.Click += button5_Click;
             // 
-            // comboBox2
+            // cboxEmpresa
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(441, 35);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(127, 23);
-            comboBox2.TabIndex = 16;
+            cboxEmpresa.FormattingEnabled = true;
+            cboxEmpresa.Location = new Point(441, 35);
+            cboxEmpresa.Name = "cboxEmpresa";
+            cboxEmpresa.Size = new Size(127, 23);
+            cboxEmpresa.TabIndex = 16;
             // 
             // label7
             // 
@@ -374,15 +395,15 @@
             label7.TabIndex = 15;
             label7.Text = "Empresa";
             // 
-            // textBox5
+            // txtNomeUserPesquisa
             // 
-            textBox5.BackColor = SystemColors.InactiveCaption;
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Segoe UI", 9.75F);
-            textBox5.Location = new Point(143, 34);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(292, 25);
-            textBox5.TabIndex = 13;
+            txtNomeUserPesquisa.BackColor = SystemColors.InactiveCaption;
+            txtNomeUserPesquisa.BorderStyle = BorderStyle.FixedSingle;
+            txtNomeUserPesquisa.Font = new Font("Segoe UI", 9.75F);
+            txtNomeUserPesquisa.Location = new Point(143, 34);
+            txtNomeUserPesquisa.Name = "txtNomeUserPesquisa";
+            txtNomeUserPesquisa.Size = new Size(292, 25);
+            txtNomeUserPesquisa.TabIndex = 13;
             // 
             // button4
             // 
@@ -403,14 +424,14 @@
             label6.TabIndex = 11;
             label6.Text = "Usuário";
             // 
-            // textBox4
+            // txtcoduserPesquisa
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI", 9.75F);
-            textBox4.Location = new Point(19, 34);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(78, 25);
-            textBox4.TabIndex = 10;
+            txtcoduserPesquisa.BorderStyle = BorderStyle.FixedSingle;
+            txtcoduserPesquisa.Font = new Font("Segoe UI", 9.75F);
+            txtcoduserPesquisa.Location = new Point(19, 34);
+            txtcoduserPesquisa.Name = "txtcoduserPesquisa";
+            txtcoduserPesquisa.Size = new Size(78, 25);
+            txtcoduserPesquisa.TabIndex = 10;
             // 
             // usuarios
             // 
@@ -419,6 +440,7 @@
             ClientSize = new Size(819, 475);
             Controls.Add(groupBox1);
             Name = "usuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastrar usuários";
             groupBox1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
@@ -426,8 +448,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridPermissoesUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridUsuariosCadastrados).EndInit();
             ResumeLayout(false);
         }
 
@@ -438,7 +460,7 @@
         private TextBox txtsenhaCadastro;
         private Label label2;
         private GroupBox groupBox1;
-        private Button button2;
+        private Button btFechar;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Label label3;
@@ -450,20 +472,21 @@
         private Label label4;
         private TextBox txtcodigoCadastro;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtcoduserPesquisa;
         private Button button4;
-        private Button button7;
-        private Button button6;
-        private DataGridView dataGridView1;
-        private Button button5;
-        private ComboBox comboBox2;
+        private Button btEditar;
+        private Button BtExcluir;
+        private DataGridView dataGridUsuariosCadastrados;
+        private Button btPesquisa;
+        private ComboBox cboxEmpresa;
         private Label label7;
-        private TextBox textBox5;
+        private TextBox txtNomeUserPesquisa;
         private Label label9;
         private Label label8;
-        private DataGridView dataGridView2;
-        private Button button8;
+        private DataGridView dataGridPermissoesUsuarios;
+        private Button btconfirmaAlteracoes;
         private CheckBox cboxGerarSenhaPadrao;
         private Button btLimparCadastro;
+        private Button button1;
     }
 }

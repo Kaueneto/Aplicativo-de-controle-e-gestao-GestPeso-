@@ -40,78 +40,79 @@ namespace GestPeso
 
         private async Task LoginAsync()
         {
-            try
-            {
-                progressBarLogin.Visible = true;
-                progressBarLogin.Value = 0;
-                progressBarLogin.Value = 5;
+            //try
+            //{
+            //    progressBarLogin.Visible = true;
+            //    progressBarLogin.Value = 0;
+            //    progressBarLogin.Value = 5;
 
-                progressBarLogin.Value = 20;
-                progressBarLogin.Value = 25;
+            //    progressBarLogin.Value = 20;
+            //    progressBarLogin.Value = 25;
 
-                // Simula progresso inicial
-                progressBarLogin.Value = 30;
+            //    // Simula progresso inicial
+            //    progressBarLogin.Value = 30;
 
-                // Carrega o .env
-                Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
+            //    // Carrega o .env
+            //    Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
 
-                string url = Environment.GetEnvironmentVariable("SUPABASE_URL");
-                string key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
+            //    string url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+            //    string key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
-                if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
-                {
-                    MessageBox.Show("Variáveis de ambiente SUPABASE_URL ou SUPABASE_KEY não definidas.");
-                    return;
-                }
+            //    if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
+            //    {
+            //        MessageBox.Show("Variáveis de ambiente SUPABASE_URL ou SUPABASE_KEY não definidas.");
+            //        return;
+            //    }
 
-                // Cria o client e inicializa
-                client = new Supabase.Client(url, key);
-                await client.InitializeAsync();
+            //    // Cria o client e inicializa
+            //    client = new Supabase.Client(url, key);
+            //    await client.InitializeAsync();
 
-                string codigoUsuario = txtuser.Text.Trim();
-                string senhaDigitada = txtsenha.Text;
+            //    string codigoUsuario = txtuser.Text.Trim();
+            //    string senhaDigitada = txtsenha.Text;
 
-                if (string.IsNullOrEmpty(codigoUsuario) || string.IsNullOrEmpty(senhaDigitada))
-                {
-                    MessageBox.Show("Preencha usuário e senha.");
-                    return;
-                }
+            //    if (string.IsNullOrEmpty(codigoUsuario) || string.IsNullOrEmpty(senhaDigitada))
+            //    {
+            //        MessageBox.Show("Preencha usuário e senha.");
+            //        return;
+            //    }
 
-                // Busca o usuário na tabela 'usuarios'
-                var usuarios = await client
-                    .From<Usuario>()
-                    .Where(u => u.codigo_usuario == codigoUsuario)
-                    .Get();
-                progressBarLogin.Value = 80;
+            //    // Busca o usuário na tabela 'usuarios'
+            //    var usuarios = await client
+            //        .From<Usuario>()
+            //        .Where(u => u.codigo_usuario == codigoUsuario)
+            //        .Get();
+            //    progressBarLogin.Value = 80;
 
-                if (usuarios.Models.Count == 0)
-                {
-                    MessageBox.Show("Usuário não encontrado.");
-                    return;
-                }
+            //    if (usuarios.Models.Count == 0)
+            //    {
+            //        MessageBox.Show("Usuário não encontrado.");
+            //        return;
+            //    }
 
-                var usuario = usuarios.Models[0];
+            //    var usuario = usuarios.Models[0];
 
-                // Validação da senha usando BCrypt
-                if (BCrypt.Net.BCrypt.Verify(senhaDigitada, usuario.senha_hash))
-                {
-                    progressBarLogin.Value = 100;
-                    progressBarLogin.Visible = false;
-                    MessageBox.Show($"Login realizado! Bem-vindo(a) {usuario.nome}");
-                    var menuForm = new menu();
-                    menuForm.Show();
-                }
-                else
-                {
-                    progressBarLogin.Value = 1;
-                    progressBarLogin.Visible = false;
-                    MessageBox.Show("Senha incorreta.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
-            }
+            //    // Validação da senha usando BCrypt
+            //    if (BCrypt.Net.BCrypt.Verify(senhaDigitada, usuario.senha_hash))
+            //    {
+            //        progressBarLogin.Value = 100;
+            //        progressBarLogin.Visible = false;
+            //        MessageBox.Show($"Login realizado! Bem-vindo(a) {usuario.nome}");
+            var menuForm = new menu();
+            menuForm.Show();
+            //    }
+            //    else  
+            //    {
+            //        progressBarLogin.Value = 1;
+            //        progressBarLogin.Visible = false;
+            //        MessageBox.Show("Senha incorreta.");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Erro ao acessar O banco de dados: " + ex.Message);
+            //}
+            Db.Abrir();
         }
 
 
