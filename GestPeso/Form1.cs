@@ -16,7 +16,7 @@ namespace GestPeso
 
         public LoginPage()
         {
-            
+
             InitializeComponent();
 
             // Evento do botão
@@ -27,6 +27,12 @@ namespace GestPeso
         {
             try
             {
+                progressBarLogin.Visible = true;
+                progressBarLogin.Value = 0;
+
+                // Simula progresso inicial
+                progressBarLogin.Value = 30;
+
                 // Carrega o .env
                 Env.Load(@"C:\dev\GestPeso\GestPeso\.env");
 
@@ -57,6 +63,7 @@ namespace GestPeso
                     .From<Usuario>()
                     .Where(u => u.codigo_usuario == codigoUsuario)
                     .Get();
+                progressBarLogin.Value = 80;
 
                 if (usuarios.Models.Count == 0)
                 {
@@ -69,10 +76,16 @@ namespace GestPeso
                 // Validação simples de senha (texto puro)
                 if (usuario.senha_hash == senhaDigitada)
                 {
+                    progressBarLogin.Value = 100;
+                    progressBarLogin.Visible = false;
                     MessageBox.Show($"Login realizado! Bem-vindo(a) {usuario.nome}");
+                    var menuForm = new menu();
+                    menuForm.Show();
                 }
                 else
                 {
+                    progressBarLogin.Value = 1;
+                    progressBarLogin.Visible = false;
                     MessageBox.Show("Senha incorreta.");
                 }
             }
@@ -81,7 +94,17 @@ namespace GestPeso
                 MessageBox.Show("Erro ao acessar Supabase: " + ex.Message);
             }
         }
+
+        private void btentrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btclose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
-  
+
 }

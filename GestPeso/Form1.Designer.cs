@@ -36,6 +36,7 @@
             btchangepass = new Button();
             btclose = new Button();
             groupBox1 = new GroupBox();
+            progressBarLogin = new ProgressBar();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             btentrar.TabIndex = 2;
             btentrar.Text = "Entrar";
             btentrar.UseVisualStyleBackColor = true;
-          //  btentrar.Click += button1_ClickAsync;
+            btentrar.Click += btentrar_Click;
             // 
             // txtsenha
             // 
@@ -108,10 +109,12 @@
             btclose.TabIndex = 4;
             btclose.Text = "Fechar";
             btclose.UseVisualStyleBackColor = true;
+            btclose.Click += btclose_Click;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(progressBarLogin);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btclose);
             groupBox1.Controls.Add(txtuser);
@@ -124,6 +127,15 @@
             groupBox1.Size = new Size(353, 174);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
+            // 
+            // progressBarLogin
+            // 
+            progressBarLogin.Location = new Point(0, 143);
+            progressBarLogin.Maximum = 140;
+            progressBarLogin.Name = "progressBarLogin";
+            progressBarLogin.Size = new Size(355, 23);
+            progressBarLogin.TabIndex = 5;
+            progressBarLogin.Visible = false;
             // 
             // LoginPage
             // 
@@ -150,5 +162,6 @@
         private Button btchangepass;
         private Button btclose;
         private GroupBox groupBox1;
+        private ProgressBar progressBarLogin;
     }
 }
