@@ -1,6 +1,8 @@
 ﻿using DotNetEnv;
+using GestPeso.model;
 using Microsoft.VisualBasic;
 using Npgsql;
+using Supabase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +17,11 @@ namespace GestPeso
 {
     public partial class usuarios : Form
     {
+        private readonly Client client; // Client Supabase já inicializado no login
         public usuarios()
         {
             InitializeComponent();
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -163,7 +167,7 @@ namespace GestPeso
         {
             try
             {
-               // Db.Abrir();
+                // Db.Abrir();
 
                 string sql = @"
                     SELECT id_usuario, codigo_usuario, nome, id_empresa, dt_cadastro_usuario
@@ -214,7 +218,7 @@ namespace GestPeso
             }
             finally
             {
-               // Db.Fechar();
+                // Db.Fechar();
             }
         }
 
@@ -222,6 +226,46 @@ namespace GestPeso
         {
 
         }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridUsuariosCadastrados.SelectedRows.Count > 0)
+            {
+                // Pega a linha selecionada
+                var linha = dataGridUsuariosCadastrados.SelectedRows[0];
+
+                // Pega os dados diretamente das células do DataGridView
+                string codigo = linha.Cells["codigo_usuario"].Value.ToString();
+                string nome = linha.Cells["nome"].Value.ToString();
+                string empresa = linha.Cells["id_empresa"].Value.ToString();
+
+                // Cria o formulário de edição passando os valores
+                EditarUsers editarForm = new EditarUsers(codigo, nome, empresa);
+                editarForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um usuário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        private void dataGridUsuariosCadastrados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+
+
+        }
+
+
+
+
+        private void dataGridUsuariosCadastrados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+
+
     }
 
 }

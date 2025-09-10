@@ -19,7 +19,7 @@ namespace GestPeso
     public partial class LoginPage : Form
     {
 
-        private Supabase.Client client;
+        public Supabase.Client client;
 
         public LoginPage()
         {
@@ -53,10 +53,10 @@ namespace GestPeso
             //    progressBarLogin.Value = 30;
 
             //    // Carrega o .env
-            //    Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
+                Env.Load(@"C:\dev\PastaGestPeso\GestPeso\.env");
 
-            //    string url = Environment.GetEnvironmentVariable("SUPABASE_URL");
-            //    string key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
+                string url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+                string key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
             //    if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
             //    {
@@ -64,9 +64,9 @@ namespace GestPeso
             //        return;
             //    }
 
-            //    // Cria o client e inicializa
-            //    client = new Supabase.Client(url, key);
-            //    await client.InitializeAsync();
+           
+               client = new Supabase.Client(url, key);
+              await client.InitializeAsync();
 
             //    string codigoUsuario = txtuser.Text.Trim();
             //    string senhaDigitada = txtsenha.Text;
